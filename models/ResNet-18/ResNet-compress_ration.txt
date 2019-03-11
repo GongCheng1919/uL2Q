@@ -1,0 +1,8 @@
+ResNet-18
+Float-accuracy:65.44
+T&Q:0.46
+Param-num:11.69M
+Conv-num:11.177M
+Float-size:44.594MB
+T&Q-size:3.154MB
+ratio:14.139

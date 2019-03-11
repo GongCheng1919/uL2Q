@@ -1,0 +1,21 @@
+#train has 1280000 images，and 256 one batch,5000*256=1epoch
+#test has 50000 images, and 50 one batch, 50*1000=50000,test all
+net: "models/ResNet-18/ULQ/resnet18_ulq1.prototxt"
+test_iter: 1000
+test_interval: 1000
+base_lr: 0.001
+display: 100
+lr_policy: "multistep"
+stepvalue:30000
+stepvalue:45000
+stepvalue:50000
+gamma:0.1
+max_iter:55000
+momentum: 0.9
+weight_decay: 0.0001
+snapshot: 10000
+snapshot_prefix: "models/ResNet-18/ULQ/model/resnet-18_ulq1"
+random_seed: 0
+test_initialization: false
+solver_mode: GPU
+iter_size:4 #1GPU

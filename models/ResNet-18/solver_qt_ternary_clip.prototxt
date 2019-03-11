@@ -1,0 +1,18 @@
+net: "models/ResNet-18/train_qt_ternary_clip.prototxt"
+test_iter: 1000
+test_interval: 1000
+base_lr: 0.00001
+display: 100
+lr_policy: "multistep"
+stepvalue:15000
+stepvalue:20000
+stepvalue:25000
+max_iter:30000
+momentum: 0.9
+weight_decay: 0.00005
+snapshot: 10000
+snapshot_prefix: "models/ResNet-18/resnet-18_qt_ternary_clip"
+random_seed: 0
+#test_initialization: false
+solver_mode: GPU
+iter_size:1
