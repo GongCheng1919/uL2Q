@@ -24,10 +24,10 @@ weights_compress_param{
 # Citation
 Please cite **μL2Q** in your publications if it helps your research:
 ```
-@article{cheng2019μL2Q,
-  title={μL2Q: An Ultra-Low Loss Quantization Method for DNN},
+@article{cheng2019uL2Q,
+  title={$\mu$L2Q: An Ultra-Low Loss Quantization Method for DNN},
   author={Cheng, Gong and Ye, Lu and Tao, Li and Xiaofan, Zhang and Cong, Hao and Deming, Chen and Yao, Chen},
-  journal={Conference The 2019 International Joint Conference on Neural Networks (IJCNN)},
+  journal={The 2019 International Joint Conference on Neural Networks (IJCNN)},
   year={2019}
 }
 ```
