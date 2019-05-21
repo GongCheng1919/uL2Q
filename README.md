@@ -1,6 +1,6 @@
 # Installation
 - Clone: clone our_branch to local:
-```
+```shell
     git clone our_branch
     cd our_branch
 ```
@@ -48,7 +48,7 @@ Attributes of `weights_compress_param` include:
 ```
 mxbits:            Integer. Must be specified manually. Limiting the bit width of quantized data and requiring 
                    manual configuration, default is 8 (bit width).
-				   
+   
 fixedpos:          Integer. Can't be specified manually. It will be generated automatically in training.
                    For Ternary_Quantize: After quantizing decimal to integer by shift (output=round(input/2^fixedpos)), 
                                          the number of steps of decimal point movement is recorded in fixedpos.
@@ -59,13 +59,13 @@ alpha:             Real (Float). Can't be specified manually. It will be generat
                    k can be set by configure the weights_compress_param.maxbits.
                    For ULQ: referring to reciprocal of alpha in a paper 2 (reference 2).
 
-delta:              Real (Float). Can't be specified manually. It will be generated automatically in training.
+delta:             Real (Float). Can't be specified manually. It will be generated automatically in training.
                    For Ternary_Quantize: referring to delta in a paper 1 (reference 1).
                    For ULQ: referring to beta in a paper 2 (reference 2).
 ```
-### 2, Obtaining the quantized weights and compression parameters of  of quantized model
+### 2, Obtaining the quantized weights and compression parameters of quantized model
 Obtaining the weights of quantized model:
-``` python
+```python
 # using pycaffe to get the weigts of each layer
 import caffe
 import numpy as np
@@ -76,7 +76,7 @@ for param_name in net.params.keys():
     bias = net.params[param_name][1].quantize
 ```
 Obtaining compression method and compression parameters:
-```
+```python
 import caffe
 import numpy as np
 net = caffe.Net(your_deploy_prototxt, your_caffemodel_file, caffe.TEST)
@@ -101,7 +101,7 @@ of the integer (such as alpha), see the following steps
 We use lenet5 as a demo.
 ### Prepare enviroment and data 
 Set up the Python environment: we'll use the pylab import for numpy and plot inline.
-```
+```python
 from pylab import *
 %matplotlib inline
 caffe_root = './'  # this file should be run from {caffe_root} (otherwise change this line)
@@ -115,7 +115,7 @@ import os
 !examples/mnist/create_mnist.sh
 ```
 ### Creating the net with quantization config
-```
+```python
 from caffe import layers as L, params as P
 def lenet(lmdb, batch_size):
     # our version of LeNet: a series of linear and simple nonlinear transformations
@@ -151,7 +151,7 @@ with open(test_net_path, 'w') as f:
     f.write(str(lenet(caffe_root+'examples/mnist/mnist_test_lmdb', test_batchsize)))
 ```
 ### Define solver:
-```
+```python
 solver_config_path=caffe_root+'examples/mnist/lenet_auto_quantization_solver.prototxt'
 from caffe.proto import caffe_pb2
 s = caffe_pb2.SolverParameter()
@@ -197,7 +197,7 @@ solver = None  # ignore this workaround for lmdb data (can't instantiate two sol
 solver = caffe.get_solver(solver_config_path)
 ```
 ### Training:
-```
+```python
 epoches = 20
 # print train_epoch
 # losses will also be stored in the log
@@ -256,6 +256,12 @@ imshow(data3[:,0].reshape(8, 8, 24, 24).transpose(0, 2, 1, 3).reshape(8*24, 8*24
 
 Please cite Our works in your publications if it helps your research:
 ```
+@article{yao2019tdla,
+  title={T-DLA: An Open-source Deep Learning Accelerator for Ternarized DNN Models on Embedded FPGA},
+  author={Yao Chen, Kai Zhang, Cheng Gong, Cong Hao, Xiaofan Zhang, Tao Li and Deming Chen},
+  journal={IEEE Computer Society Annual Symposium on VLSI 2019 (ISVLSI)},
+  year={2019}
+}
 @article{cheng2019uL2Q,
   title={$\mu$L2Q: An Ultra-Low Loss Quantization Method for DNN},
   author={Cheng, Gong and Ye, Lu and Tao, Li and Xiaofan, Zhang and Cong, Hao and Deming, Chen and Yao, Chen},
