@@ -20,6 +20,10 @@ L2 distance before and after quantization.
 ![algorithm](algorithms.png)
 ![lambda_table](lambda_table.png)
 
+## DNN Training
+- Using the gradient of quantization weight to approximate the gradient of full precision weight
+![training_process](training_process.png)
+
 ## Experiments
 Our experiment is divided into two parts: simulation data evaluation and model testing.
 ### Simulation data evaluation
@@ -28,7 +32,10 @@ quantization methods, and draw data curves before and after quantization. It can
 seen that our quantization method is closest to the original data after quantization.
 ![sde](curve_fitting.png)
 ### Model testing
+- We select three representative datasets and four models with different sizes.
 ![model selection](model_selection.png)
+- The experimental results are the comparison of the same model output accuracy，which
+ quantized by different quantization methods (Binary, Ternary and fixed-point). 
 ![expriment_results2](expriment_results2.png)
 ![expriment_results](expriment_results.png)
 
