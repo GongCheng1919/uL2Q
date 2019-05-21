@@ -226,7 +226,7 @@ ax2.set_title('Test Accuracy: {:.2f}'.format(test_acc[-1]))
 ```
 
 ### Get and restore weights and activations for further processing
-```
+```python
 #restore the weights to integer
 def parse_data(data,compress_method,compress_param):
     if compress_method=="ULQ":
@@ -255,10 +255,11 @@ imshow(data3[:,0].reshape(8, 8, 24, 24).transpose(0, 2, 1, 3).reshape(8*24, 8*24
 ```
 
 Please cite Our works in your publications if it helps your research:
-
+```
 @article{cheng2019uL2Q,
   title={$\mu$L2Q: An Ultra-Low Loss Quantization Method for DNN},
   author={Cheng, Gong and Ye, Lu and Tao, Li and Xiaofan, Zhang and Cong, Hao and Deming, Chen and Yao, Chen},
   journal={The 2019 International Joint Conference on Neural Networks (IJCNN)},
   year={2019}
 }
+```
