@@ -1,6 +1,7 @@
 # $\mu$L2Q: An Ultra-Low Loss Quantization Method for DNN Compression
 
-## This method has been merged into [Quantization-caffe](https://github.com/GongCheng1919/Quantization-caffe). Please go to [Quantization-caffe](https://github.com/GongCheng1919/Quantization-caffe) for detailed introduction.
+## This method has been merged into [Quantization-caffe](https://github.com/GongCheng1919/Quantization-caffe). 
+Please go to [Quantization-caffe](https://github.com/GongCheng1919/Quantization-caffe) for detail information..
 
 ## $\mu$L2Q quantization method
 - Firstly, by analyzing the data distribution of the model, 
