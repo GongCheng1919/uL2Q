@@ -1,9 +1,10 @@
 # $\mu$L2Q: An Ultra-Low Loss Quantization Method for DNN Compression
+$\mu$L2Q: This open-source package introduces an ultra-low loss quantization (μL2Q) method that provides DNN quantization schemes based on comprehensive quantitative data analysis. μL2Q builds the transformation of the original data to a data space with standard normal distribution, and then finds the optimal parameters to minimize the loss of the quantization of a target bitwidth. Our method can deliver consistent accuracy improvements compared to the state-of-the-art quantization solutions with the same compression ratio.
 
-## This method has been merged into [Quantization-caffe](https://github.com/GongCheng1919/Quantization-caffe). 
+## This method has been merged into [Quantization-caffe](https://github.com/GongCheng1919/Quantization-caffe).
 Please go to [Quantization-caffe](https://github.com/GongCheng1919/Quantization-caffe) for detail information..
 
-## $\mu$L2Q quantization method
+## Method
 - Firstly, by analyzing the data distribution of the model, 
 we find that the weight distribution of most models obeys the 
 normal distribution approximately, and the regularization term 
